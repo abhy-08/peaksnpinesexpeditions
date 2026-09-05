@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms & Conditions | Peaks 'N' Pines Expeditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --slate-bg: #090d16;
+      --slate-card: rgba(17, 24, 39, 0.8);
+      --arctic-blue: #38bdf8;
+      --arctic-glow: rgba(56, 189, 248, 0.15);
+      --text-light: #f1f5f9;
+      --text-muted: #94a3b8;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--slate-bg);
+      color: var(--text-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.92), rgba(9, 13, 22, 0.99)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    header {
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--arctic-blue);
+    }
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .back-home {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .back-home:hover {
+      color: var(--arctic-blue);
+    }
+    .terms-container {
+      max-width: 900px;
+      margin: 70px auto;
+      padding: 0 20px;
+    }
+    .terms-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .terms-header span {
+      display: inline-block;
+      color: var(--arctic-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: var(--arctic-glow);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      margin-bottom: 20px;
+    }
+    .terms-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .terms-header p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .terms-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .term-card {
+      background: var(--slate-card);
+      backdrop-filter: blur(12px);
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: border-color 0.3s ease;
+    }
+    .term-card:hover {
+      border-color: var(--arctic-blue);
+    }
+    .term-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .term-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+    .term-number {
+      position: absolute;
+      top: 28px;
+      right: 32px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      color: var(--arctic-blue);
+      opacity: 0.4;
+    }
+    footer {
+      text-align: center;
+      padding: 35px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(56, 189, 248, 0.15);
+      margin-top: 80px;
+      background: rgba(5, 8, 15, 0.98);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand-group">
+      <img src="logo.PNG" alt="Peaks 'N' Pines Logo" class="brand-logo">
+      <span class="brand-title">Peaks 'N' Pines</span>
+    </a>
+    <a href="index.html" class="back-home">&larr; Back to Home</a>
+  </header>
+
+  <main class="terms-container">
+    <div class="terms-header">
+      <span>Legal & Guidelines</span>
+      <h1>Terms & Conditions</h1>
+      <p>Please review our booking policies, traveler guidelines, and operational procedures designed to ensure a seamless expedition experience.</p>
+    </div>
+
+    <div class="terms-grid">
+      <div class="term-card">
+        <span class="term-number">01</span>
+        <h3>Hotel Accommodations</h3>
+        <p>The above-mentioned hotels will be confirmed after getting your final confirmation. If not available, we will provide you similar hotels for your stay. Interconnected rooms are subjected to availability at the time of confirmation.</p>
+      </div>
+
+      <div class="term-card">
+        <span class="term-number">02</span>
+        <h3>Cancellations & Refunds</h3>
+        <p>The company reserves the right to postpone or cancel any of the tours without assigning any reason. In that case, money paid by the tour participants will be fully refunded, but no claim will be entertained.</p>
+      </div>
+
+      <div class="term-card">
+        <span class="term-number">03</span>
+        <h3>Passenger Identification & Manifest</h3>
+        <p>All passengers should carry ID proof. A complete list of passengers must be provided prior to travel.</p>
+      </div>
+
+      <div class="term-card">
+        <span class="term-number">04</span>
+        <h3>Tariff & Pricing Adjustments</h3>
+        <p>The tariff of the tour quoted is calculated as per the rates prevailing at the time of quoting it. The company reserves the right to change the tariff in the event of modification/alteration/change/variation in the said rates before the date of departure.</p>
+      </div>
+
+      <div class="term-card">
+        <span class="term-number">05</span>
+        <h3>Payment Policy</h3>
+        <p>Minimum 40% of the trip must be paid before starting the trip.</p>
+      </div>
+
+      <div class="term-card">
+        <span class="term-number">06</span>
+        <h3>Traveler Conduct & Damages</h3>
+        <p>Any damage caused to the bus during travel due to a traveler's negligence or intentional actions may be charged to the responsible individual.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Peaks 'N' Pines Expeditions • Terms & Conditions • Designed by abhy
+  </footer>
+
+</body>
+</html>
