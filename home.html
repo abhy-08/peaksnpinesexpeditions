@@ -394,6 +394,122 @@
       font-weight: bold;
     }
 
+    /* Fleet Gallery Section */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .fleet-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 200px;
+      border: 1px solid rgba(94, 234, 212, 0.25);
+      background: var(--slate-card);
+      cursor: pointer;
+    }
+    .fleet-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .fleet-card:hover img {
+      transform: scale(1.05);
+    }
+    .fleet-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(9, 13, 22, 0.92), transparent);
+      padding: 14px 12px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--glacier-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .click-hint {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: rgba(9, 13, 22, 0.7);
+      color: var(--glacier-accent);
+      font-size: 0.6rem;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(94, 234, 212, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .fleet-card:hover .click-hint {
+      opacity: 1;
+    }
+
+    /* Lightbox Modal for Full-Screen View */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(5, 8, 15, 0.94);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      background: var(--slate-card);
+      border: 1px solid rgba(94, 234, 212, 0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    .lightbox-content img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #000;
+    }
+    .lightbox-caption {
+      padding: 16px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      color: var(--glacier-accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 15px; right: 15px;
+      background: rgba(31, 41, 61, 0.9);
+      color: var(--white);
+      border: 1px solid rgba(94, 234, 212, 0.4);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover {
+      background: var(--glacier-accent);
+      color: var(--slate-bg);
+    }
+
     /* Menu Section */
     .menu-section {
       background: rgba(17, 24, 39, 0.92);
@@ -607,6 +723,7 @@
       <a href="#about">About</a>
       <a href="#packages">Journeys</a>
       <a href="#details">Inclusions</a>
+      <a href="#fleet">Fleet</a>
       <a href="#menu">Menu</a>
       <a href="terms.html">Terms</a>
       <a href="#contact" class="nav-cta">Connect</a>
@@ -817,6 +934,74 @@
     </div>
   </section>
 
+  <!-- Fleet & Transport Gallery (Clickable) -->
+  <section id="fleet">
+    <div class="section-header">
+      <div>
+        <span class="tag">Fleet & Comfort</span>
+        <h2>Our Travel Fleet</h2>
+      </div>
+      <p>Click any bus to view full screen</p>
+    </div>
+    
+    <div class="fleet-grid">
+      <div class="fleet-card" onclick="openLightbox('bus1.jpeg', 'Warrior')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus1.jpeg" alt="Warrior">
+        <div class="fleet-overlay">Warrior</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus2.jpeg', 'Travel Hub')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus2.jpeg" alt="Travel Hub">
+        <div class="fleet-overlay">Travel Hub</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus3.jpeg', 'London')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus3.jpeg" alt="London">
+        <div class="fleet-overlay">London</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus4.jpeg', 'Kaali')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus4.jpeg" alt="Kaali">
+        <div class="fleet-overlay">Kaali</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus5.jpeg', 'Holidays')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus5.jpeg" alt="Singam">
+        <div class="fleet-overlay">Singam</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus6.jpeg', 'Oneness')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus6.jpeg" alt="Oneness">
+        <div class="fleet-overlay">Oneness</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus8.jpeg', 'Scarface')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus8.jpeg" alt="Scarface">
+        <div class="fleet-overlay">Scarface</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus9.jpeg', 'Hulk')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus9.jpeg" alt="Hulk">
+        <div class="fleet-overlay">Hulk</div>
+      </div>
+      <div class="fleet-card" onclick="openLightbox('bus7.jpeg', 'Wrangler')">
+        <span class="click-hint">Zoom 🔍</span>
+        <img src="bus7.jpeg" alt="Wrangler">
+        <div class="fleet-overlay">Wrangler</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Screen Lightbox Modal Popup -->
+  <div id="fleetLightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightboxManual()">&times;</button>
+      <img id="lightboxImg" src="" alt="Enlarged Fleet Image">
+      <div id="lightboxCaption" class="lightbox-caption">Bus Name</div>
+    </div>
+  </div>
+
   <!-- Menu Section -->
   <section>
     <div class="menu-section" id="menu">
@@ -897,6 +1082,33 @@
     <a href="tel:7559842196" class="m-bar-btn m-call">Call 📞</a>
     <a href="terms.html" class="m-bar-btn m-terms">Terms 📄</a>
   </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    function openLightbox(imgSrc, captionText) {
+      const modal = document.getElementById('fleetLightbox');
+      const img = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      
+      img.src = imgSrc;
+      caption.innerText = captionText;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeLightboxManual() {
+      const modal = document.getElementById('fleetLightbox');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeLightbox(event) {
+      // Closes if clicking on the dark backdrop area
+      const modal = document.getElementById('fleetLightbox');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
 
 </body>
 </html>
