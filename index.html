@@ -3,874 +3,127 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Peaks 'N' Pines Expeditions | Travel, Elevated</title>
+  <title>Peaks 'N' Pines Expeditions | Welcome</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --slate-bg: #090d16;
-      --slate-card: rgba(17, 24, 39, 0.9);
-      --slate-light: #1f293d;
       --arctic-blue: #38bdf8;
-      --arctic-glow: rgba(56, 189, 248, 0.15);
+      --arctic-glow: rgba(56, 189, 248, 0.2);
       --text-light: #f1f5f9;
       --text-muted: #94a3b8;
       --white: #ffffff;
-      --whatsapp-green: #25d366;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--slate-bg);
       color: var(--text-light);
       font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.94), rgba(9, 13, 22, 0.99)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(to bottom, rgba(9, 13, 22, 0.85), rgba(9, 13, 22, 0.95)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
-      background-attachment: fixed;
-      padding-bottom: 70px; /* Space for mobile sticky bottom bar */
+      background-position: center;
+      padding: 20px;
     }
-
-    /* Navigation */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 14px 4%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(9, 13, 22, 0.9);
+    .welcome-card {
+      background: rgba(17, 24, 39, 0.85);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-    }
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
     .brand-logo {
-      width: 36px;
-      height: 36px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1.5px solid var(--arctic-blue);
+      border: 2px solid var(--arctic-blue);
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px var(--arctic-glow);
     }
-    .brand-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      color: var(--white);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    nav.nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    nav.nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    nav.nav-links a:hover {
-      color: var(--arctic-blue);
-    }
-    .nav-cta {
-      background: var(--arctic-blue) !important;
-      color: var(--slate-bg) !important;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600 !important;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 90vh;
-      padding: 130px 4% 50px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .hero-content .tag {
+    .tag {
       display: inline-block;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: var(--arctic-blue);
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       background: var(--arctic-glow);
-      padding: 5px 12px;
+      padding: 5px 14px;
       border-radius: 20px;
       border: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .hero-content h1 {
+    h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.8rem, 5.5vw, 5.5rem);
-      line-height: 1.1;
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      line-height: 1.15;
       color: var(--white);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-weight: 600;
     }
-    .hero-content h1 span {
+    h1 span {
       color: var(--arctic-blue);
     }
-    .hero-content p {
-      font-size: 0.98rem;
+    p {
+      font-size: 0.92rem;
       line-height: 1.6;
       color: var(--text-muted);
-      max-width: 460px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .btn-primary {
+    .btn-enter {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       background: var(--arctic-blue);
       color: var(--slate-bg);
-      padding: 14px 26px;
+      padding: 16px 32px;
       border-radius: 30px;
-      text-decoration: none;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
-    }
-    .btn-secondary, .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .btn-secondary {
-      background: rgba(31, 41, 61, 0.8);
-      color: var(--text-light);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .btn-whatsapp {
-      background: rgba(37, 211, 102, 0.15);
-      color: var(--whatsapp-green);
-      border: 1px solid rgba(37, 211, 102, 0.4);
-    }
-    .hero-image-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 12px;
-      height: 420px;
-    }
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 14px;
-    }
-    .hero-img:nth-child(2) {
-      margin-top: 24px;
-    }
-
-    /* Section Global Styles */
-    section {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 70px 4%;
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 40px;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-      padding-bottom: 16px;
-    }
-    .section-header h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 600;
-      color: var(--white);
-    }
-    .section-header p {
-      color: var(--arctic-blue);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* About & Destinations */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .about-text h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2rem;
-      color: var(--white);
-      margin-bottom: 16px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    .about-text p {
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 14px;
-      font-size: 0.95rem;
-    }
-    .destinations-cloud {
-      background: var(--slate-card);
-      backdrop-filter: blur(12px);
-      padding: 28px;
-      border-radius: 20px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    }
-    .destinations-cloud h4 {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--arctic-blue);
-      margin-bottom: 16px;
-    }
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .badge {
-      background: rgba(31, 41, 61, 0.9);
-      padding: 7px 14px;
-      border-radius: 18px;
-      font-size: 0.78rem;
-      color: var(--text-light);
-      font-weight: 500;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-    }
-
-    /* Packages Container */
-    .packages-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .package-card {
-      background: var(--slate-card);
-      backdrop-filter: blur(12px);
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      display: flex;
-      flex-direction: column;
-    }
-    .package-header {
-      background: var(--slate-light);
-      padding: 20px;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-    }
-    .package-duration {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--arctic-blue);
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-    .package-header h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .package-body {
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .package-body ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .package-body li {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      position: relative;
-      padding-left: 16px;
-    }
-    .package-body li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--arctic-blue);
-      font-weight: bold;
-    }
-    .package-body p {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--arctic-blue);
-      font-weight: 600;
-    }
-
-    /* Inclusions & Exclusions Section */
-    .inclusions-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 30px;
-    }
-    .inclusion-card {
-      background: var(--slate-card);
-      backdrop-filter: blur(12px);
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    .inclusion-card.excluded {
-      border-color: rgba(239, 68, 68, 0.3);
-    }
-    .inclusion-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.4rem;
-      color: var(--white);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .inclusion-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .inclusion-card li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 20px;
-    }
-    .inclusion-card.included li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--whatsapp-green);
-      font-weight: bold;
-    }
-    .inclusion-card.excluded li::before {
-      content: "✕";
-      position: absolute;
-      left: 0;
-      color: #ef4444;
-      font-weight: bold;
-    }
-
-    /* Menu Section */
-    .menu-section {
-      background: rgba(17, 24, 39, 0.92);
-      backdrop-filter: blur(16px);
-      color: var(--white);
-      border-radius: 24px;
-      padding: 50px 30px;
-      margin: 30px auto;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    .menu-header {
-      text-align: center;
-      max-width: 550px;
-      margin: 0 auto 40px;
-    }
-    .menu-header h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin-top: 8px;
-    }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .menu-category {
-      background: rgba(31, 41, 61, 0.6);
-      padding: 22px;
-      border-radius: 14px;
-      border: 1px solid rgba(56, 189, 248, 0.15);
-    }
-    .menu-category h4 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.3rem;
-      color: var(--arctic-blue);
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    .menu-category ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .menu-category li {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .menu-category li::before {
-      content: "•";
-      color: var(--arctic-blue);
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(5, 8, 15, 0.98);
-      color: var(--white);
-      padding: 70px 4% 30px;
-      margin-top: 50px;
-      border-top: 1px solid rgba(56, 189, 248, 0.15);
-    }
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-      padding-bottom: 40px;
-    }
-    .footer-left h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      line-height: 1.15;
-    }
-    .footer-left p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      max-width: 400px;
-    }
-    .footer-left-links {
-      margin-top: 16px;
-    }
-    .footer-left-links a {
-      color: var(--arctic-blue);
       text-decoration: none;
       font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-    .contact-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .contact-card {
-      background: var(--slate-card);
-      padding: 16px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-    .contact-card span {
-      font-size: 0.58rem;
-      text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--arctic-blue);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .contact-card a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.85rem;
+      text-transform: uppercase;
       font-weight: 600;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+      transition: transform 0.2s ease;
+      width: 100%;
     }
-    .footer-bottom {
-      max-width: 1400px;
-      margin: 25px auto 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-muted);
+    .btn-enter:hover {
+      transform: translateY(-2px);
+    }
+    .footer-note {
+      margin-top: 25px;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-    }
-    .footer-bottom a {
-      color: var(--arctic-blue);
-      text-decoration: none;
-    }
-
-    /* Fixed Mobile Bottom Action Bar */
-    .mobile-bottom-bar {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(9, 13, 22, 0.95);
-      backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(56, 189, 248, 0.2);
-      padding: 10px 16px;
-      z-index: 1001;
-      justify-content: space-around;
-      align-items: center;
-      gap: 10px;
-    }
-    .m-bar-btn {
-      flex: 1;
-      text-align: center;
-      padding: 10px 8px;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .m-whatsapp {
-      background: var(--whatsapp-green);
-      color: var(--slate-bg);
-    }
-    .m-call {
-      background: var(--arctic-blue);
-      color: var(--slate-bg);
-    }
-    .m-brochure {
-      background: rgba(31, 41, 61, 0.9);
-      color: var(--text-light);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-
-    /* Responsive Queries for Phones */
-    @media (max-width: 900px) {
-      .hero, .about-grid, .footer-content, .inclusions-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      .hero { padding-top: 110px; min-height: auto; }
-      nav.nav-links { display: none; } /* Clean look on mobile, using bottom bar instead */
-      .hero-image-grid { height: 280px; }
-      .contact-cards { grid-template-columns: 1fr; }
-      .menu-section { padding: 35px 20px; }
-      .mobile-bottom-bar { display: flex; }
-      body { padding-bottom: 75px; }
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="brand-group">
-      <img src="logo.PNG" alt="Peaks 'N' Pines Logo" class="brand-logo">
-      <span class="brand-title">Peaks 'N' Pines</span>
-    </a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#packages">Journeys</a>
-      <a href="#details">Inclusions</a>
-      <a href="#menu">Menu</a>
-      <a href="terms.html">Terms</a>
-      <a href="#contact" class="nav-cta">Connect</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <span class="tag">Welcome to Peaks 'N' Pines</span>
-      <h1>Travel, <span>elevated.</span></h1>
-      <p>We craft extraordinary group expeditions and road journeys designed for modern travelers who value seamless hospitality, breathtaking landscapes, and soulful discoveries.</p>
-      <div class="hero-actions">
-        <a href="#packages" class="btn-primary">Explore Collection &rarr;</a>
-        <a href="brochure.pdf" class="btn-secondary" download>Brochure ↓</a>
-        <a href="https://wa.me/917559842196?text=Hello,%20I%20would%20like%20to%20enquire%20about%20your%20travel%20packages." target="_blank" class="btn-whatsapp">WhatsApp 💬</a>
-      </div>
+  <div class="welcome-card">
+    <img src="logo.PNG" alt="Peaks 'N' Pines Logo" class="brand-logo">
+    <span class="brand-title" style="display:none;">Peaks 'N' Pines</span>
+    <span class="tag">Established Expeditions</span>
+    <h1>Travel, <span>elevated.</span></h1>
+    <p>Step into a world of curated group journeys, breathtaking mountain getaways, and seamless road experiences.</p>
+    
+    <a href="home.html" class="btn-enter">Enter Portal &rarr;</a>
+    
+    <div class="footer-note">
+      Peaks 'N' Pines Expeditions • Designed by abhy
     </div>
-    <div class="hero-image-grid">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=85" alt="Scenic Peak" class="hero-img">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=85" alt="Alpine Mountain" class="hero-img">
-    </div>
-  </section>
-
-  <!-- About & Destinations -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-text">
-        <span class="tag">Who We Are</span>
-        <h3>Journeys made with a little more thought.</h3>
-        <p>Peaks 'N' Pines stands for authentic connection with nature and culture. We believe travel should be effortless, inspiring, and meticulously organized from start to finish.</p>
-        <p>Whether you are chasing mountain mists, deep forest retreats, or vibrant coastal sunsets, our expeditions turn ordinary holidays into unforgettable chapters.</p>
-      </div>
-      <div class="destinations-cloud">
-        <h4>Places We Have Explored</h4>
-        <div class="badge-list">
-          <span class="badge">Munnar</span>
-          <span class="badge">Vagamon</span>
-          <span class="badge">Coorg</span>
-          <span class="badge">Mysore</span>
-          <span class="badge">Goa</span>
-          <span class="badge">Dandeli</span>
-          <span class="badge">Ooty</span>
-          <span class="badge">Wayanad</span>
-          <span class="badge">Kodaikanal</span>
-          <span class="badge">Marayoor</span>
-          <span class="badge">Athirapally</span>
-          <span class="badge">Chikkamagaluru</span>
-          <span class="badge">Gokarna</span>
-          <span class="badge">Udupi</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Packages Section -->
-  <section id="packages">
-    <div class="section-header">
-      <div>
-        <span class="tag">The Collection</span>
-        <h2>Flexible Trip Packages</h2>
-      </div>
-      <p>Choose Your Combinations</p>
-    </div>
-
-    <div class="packages-container">
-      <!-- 1 Day -->
-      <article class="package-card">
-        <div class="package-header">
-          <span class="package-duration">01 Day Escape</span>
-          <h3>Single Day Trips</h3>
-        </div>
-        <div class="package-body">
-          <p>Available Destinations:</p>
-          <ul>
-            <li>Vagamon</li>
-            <li>Munnar</li>
-            <li>Marayoor</li>
-            <li>Athirapally Waterfalls</li>
-            <li>Wonderla</li>
-            <li>Silver Storm</li>
-            <li>Ramakkalmedu</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 2 Days -->
-      <article class="package-card">
-        <div class="package-header">
-          <span class="package-duration">02 Days Expedition</span>
-          <h3>Weekend Getaways</h3>
-        </div>
-        <div class="package-body">
-          <p>Available Combinations:</p>
-          <ul>
-            <li>Munnar & Vagamon</li>
-            <li>Munnar & Marayoor</li>
-            <li>Munnar & Mankulam</li>
-            <li>Mysore & Ooty</li>
-            <li>Coorg & Mysore</li>
-            <li>Marayoor & Kodaikanal</li>
-            <li>Coorg & Wayanad</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 4 Days -->
-      <article class="package-card">
-        <div class="package-header">
-          <span class="package-duration">04 Days Retreat</span>
-          <h3>Deep Discovery</h3>
-        </div>
-        <div class="package-body">
-          <p>Available Combinations:</p>
-          <ul>
-            <li>Mysore, Coorg & Chikkamagaluru</li>
-            <li>Coorg, Chikkamagaluru & Belur</li>
-            <li>Wayanad, Mysore & Coorg</li>
-            <li>Munnar, Marayoor & Kodaikanal</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 5 Days -->
-      <article class="package-card">
-        <div class="package-header">
-          <span class="package-duration">05 Days Voyage</span>
-          <h3>Grand Trail</h3>
-        </div>
-        <div class="package-body">
-          <p>Available Combinations:</p>
-          <ul>
-            <li>Dandeli, Goa & Belur</li>
-            <li>Mysore, Coorg & Belur</li>
-            <li>Chikkamagaluru, Goa & Dandeli</li>
-            <li>Malpe & Belur</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 6 Days -->
-      <article class="package-card">
-        <div class="package-header">
-          <span class="package-duration">06 Days Expedition</span>
-          <h3>The Ultimate Circuit</h3>
-        </div>
-        <div class="package-body">
-          <p>Available Combinations:</p>
-          <ul>
-            <li>Wayanad, Ooty & Mysore</li>
-            <li>Coorg, Goa & Udupi</li>
-            <li>Dandeli, Goa, Gokarna & Udupi</li>
-            <li>Vagamon, Kumarakom & Munnar</li>
-            <li>Athirapally, Vagamon & Munnar</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Inclusions & Exclusions Section -->
-  <section id="details">
-    <div class="section-header">
-      <div>
-        <span class="tag">Transparency</span>
-        <h2>Package Details</h2>
-      </div>
-      <p>What is covered</p>
-    </div>
-    <div class="inclusions-grid">
-      <div class="inclusion-card included">
-        <h3>✓ What’s Included</h3>
-        <ul>
-          <li>Well-maintained group transportation/bus as per itinerary</li>
-          <li>Confirmed hotel accommodations or resort stays</li>
-          <li>Curated meal plans (Breakfast, Lunch, or Dinner as specified in your brochure)</li>
-          <li>Campfire arrangements and outdoor activity setups where applicable</li>
-          <li>Experienced tour coordinators and drivers throughout the trip</li>
-        </ul>
-      </div>
-      <div class="inclusion-card excluded">
-        <h3>✕ What’s Excluded</h3>
-        <ul>
-          <li>Personal expenses like laundry, extra snacks, or bottled beverages outside meal plans</li>
-          <li>Any adventure sports activities or optional boat rides not listed in the package</li>
-          <li>Emergency medical costs or travel insurances</li>
-          <li>Anything not explicitly mentioned under the inclusions list</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Menu Section -->
-  <section>
-    <div class="menu-section" id="menu">
-      <div class="menu-header">
-        <span class="tag">Gastronomy</span>
-        <h2>Complete Menu List</h2>
-        <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 8px;">Handcrafted meal plans curated for energy, flavor, and local authenticity during your travels.</p>
-      </div>
-      <div class="menu-grid">
-        <div class="menu-category">
-          <h4>Breakfast Spreads</h4>
-          <ul>
-            <li>Appam & Idiyappam</li>
-            <li>Poori</li>
-            <li>Doosa</li>
-            <li>Traditional Continental & Fruit Options</li>
-          </ul>
-        </div>
-        <div class="menu-category">
-          <h4>Lunch Selections</h4>
-          <ul>
-            <li>Fried Rice</li>
-            <li>Porotta & Chappathi</li>
-            <li>Alfahm & Mandhi</li>
-            <li>Biriyani</li>
-            <li>Meals (Veg & Fish Curry) & Ghee Rice</li>
-          </ul>
-        </div>
-        <div class="menu-category">
-          <h4>Dinner & Extras</h4>
-          <ul>
-            <li>Curated evening & dinner menus as per package brochure</li>
-            <li>Campfire barbecue and snack options</li>
-            <li>Custom dietary add-ons upon request</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer / Contact Section -->
-  <footer id="contact">
-    <div class="footer-content">
-      <div class="footer-left">
-        <h2>Your next great story starts here.</h2>
-        <p>Get in touch with our team to discuss your dates, choose your ideal destinations, or reserve your spot.</p>
-        <div class="footer-left-links">
-          <a href="https://instagram.com/peaks_n_pines_expeditions" target="_blank">Instagram: @peaks_n_pines_expeditions</a>
-        </div>
-      </div>
-      <div class="contact-cards">
-        <div class="contact-card">
-          <span>Line One</span>
-          <a href="tel:7994900877">79949 00877</a>
-        </div>
-        <div class="contact-card">
-          <span>Line Two</span>
-          <a href="tel:8590483415">85904 83415</a>
-        </div>
-        <div class="contact-card">
-          <span>Line Three</span>
-          <a href="tel:7559842196">75598 42196</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>Peaks 'N' Pines Expeditions • Designed by abhy</span>
-      <span><a href="terms.html">Terms & Conditions</a> | All Rights Reserved</span>
-    </div>
-  </footer>
-
-  <!-- Fixed Mobile Bottom Action Bar (Visible only on phones) -->
-  <div class="mobile-bottom-bar">
-    <a href="https://wa.me/917559842196?text=Hello,%20I%20would%20like%20to%20enquire%20about%20your%20travel%20packages." target="_blank" class="m-bar-btn m-whatsapp">WhatsApp 💬</a>
-    <a href="tel:7559842196" class="m-bar-btn m-call">Call Us 📞</a>
-    <a href="brochure.pdf" class="m-bar-btn m-brochure" download>Brochure ↓</a>
   </div>
 
 </body>
